@@ -5,11 +5,11 @@
 
 template<typename T, int size>
 class TPQueue {
-private:
+ private:
     T* array;
     int lst, fst, num;
 
-public:
+ public:
     TPQueue() : lst(0), fst(0), num(0) {
         array = new T[size];
     }
@@ -22,12 +22,12 @@ public:
     void push(const T& value) {
         if (isFull()) {
             throw std::string("full!");
-        }
-        else {
+        } else {
             int n = lst;
             array[lst % size] = value;
             T temp = array[n % size];
-            while (array[(n - 1) % size].prior < array[n % size].prior && fst < n) {
+            while (array[(n - 1) % size].prior < array[n % size].prior \
+            && fst < n) {
                 temp = array[n % size];
                 array[n % size] = array[(n - 1) % size];
                 array[(n - 1) % size] = temp;
@@ -40,8 +40,7 @@ public:
     const T& pop() {
         if (isEmpty()) {
             throw std::string("empty!");
-        }
-        else {
+        } else {
             num--;
             return array[fst++ % size];
         }
