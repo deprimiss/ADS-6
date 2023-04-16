@@ -19,7 +19,7 @@ public:
     bool isFull() const {
         return num == size;
     }
-    void Push(const T& value) {
+    void push(const T& value) {
         if (isFull()) {
             throw std::string("full!");
         }
@@ -37,7 +37,7 @@ public:
             lst++;
         }
     }
-    const T& Pop() {
+    const T& pop() {
         if (isEmpty()) {
             throw std::string("empty!");
         }
