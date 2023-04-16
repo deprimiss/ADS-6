@@ -43,7 +43,7 @@ public:
         }
         else {
             num--;
-            return array[++fst % size];
+            return array[fst++ % size];
         }
     }
 };
