@@ -10,7 +10,7 @@ private:
     int lst, fst, num;
 
 public:
-    TPQueue() : lst(0), first(0), num(0) {
+    TPQueue() : lst(0), fst(0), num(0) {
         array = new T[size];
     }
     bool isEmpty() const {
